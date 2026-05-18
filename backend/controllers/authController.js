@@ -2,7 +2,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET || 'super_secret_talent_ai_jwt_token_key_12345', {
     expiresIn: '7d',
   });
 };

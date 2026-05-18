@@ -13,7 +13,7 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'Not authorized, token missing' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'super_secret_talent_ai_jwt_token_key_12345');
 
     const user = await User.findById(decoded.id).select('-password');
     if (!user) {
