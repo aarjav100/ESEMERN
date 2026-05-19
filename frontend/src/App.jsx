@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import AllCandidatesPage from './pages/AllCandidatesPage';
-import AddCandidatePage from './pages/AddCandidatePage';
-import JobMatchPage from './pages/JobMatchPage';
+import RegisterComplaintPage from './pages/RegisterComplaintPage';
+import ComplaintListPage from './pages/ComplaintListPage';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -35,9 +34,8 @@ function App() {
 
           {/* Protected Routes */}
           <Route path="/" element={user ? <DashboardPage /> : <Navigate to="/login" />} />
-          <Route path="/candidates" element={user ? <AllCandidatesPage /> : <Navigate to="/login" />} />
-          <Route path="/add" element={user ? <AddCandidatePage /> : <Navigate to="/login" />} />
-          <Route path="/match" element={user ? <JobMatchPage /> : <Navigate to="/login" />} />
+          <Route path="/register" element={user ? <RegisterComplaintPage /> : <Navigate to="/login" />} />
+          <Route path="/complaints" element={user ? <ComplaintListPage /> : <Navigate to="/login" />} />
 
           {/* Fallback */}
           <Route path="*" element={<Navigate to={user ? "/" : "/login"} />} />

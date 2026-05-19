@@ -5,7 +5,7 @@ import api from '../api';
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Hi there! I am TalentBot. How can I help you with your candidates today?' }
+    { role: 'assistant', content: 'Hi! I am CivicBot, your AI Grievance Assistant. Ask me anything about lodged complaints, department guidelines, or safety precautions!' }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -58,10 +58,10 @@ const Chatbot = () => {
         <div className="chatbot-window glass-panel">
           <div className="chatbot-header">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span className="chatbot-avatar">🤖</span>
+              <span className="chatbot-avatar">🏛️</span>
               <div>
-                <h4 style={{ margin: 0, fontWeight: 600 }}>TalentBot</h4>
-                <span className="chatbot-status">HR Assistant</span>
+                <h4 style={{ margin: 0, fontWeight: 600 }}>CivicBot</h4>
+                <span className="chatbot-status">Civic Assistant</span>
               </div>
             </div>
             <span className="chatbot-status-dot"></span>
@@ -91,7 +91,7 @@ const Chatbot = () => {
             <input 
               type="text" 
               className="input-field chatbot-input" 
-              placeholder="Ask about candidates, skills, or exp..." 
+              placeholder="Ask about public grievances, safety protocols..." 
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={loading}

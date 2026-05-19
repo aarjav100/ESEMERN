@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const candidateController = require('../controllers/candidateController');
+const complaintController = require('../controllers/complaintController');
 const authController = require('../controllers/authController');
 const authMiddleware = require('../middleware/authMiddleware');
 
@@ -8,12 +8,15 @@ const authMiddleware = require('../middleware/authMiddleware');
 router.post('/auth/signup', authController.signup);
 router.post('/auth/login', authController.login);
 
-// Candidate routes (Protected)
-router.post('/candidates', authMiddleware, candidateController.addCandidate);
-router.get('/candidates', authMiddleware, candidateController.getCandidates);
-router.get('/dashboard/stats', authMiddleware, candidateController.getDashboardStats);
-router.post('/match', authMiddleware, candidateController.matchCandidates);
-router.post('/ai/shortlist', authMiddleware, candidateController.aiShortlist);
-router.post('/chat', authMiddleware, candidateController.chatWithBot);
+// Complaint routes (Protected)
+router.get('/complaints/search', authMiddleware, complaintController.searchComplaintsByLocation);
+router.post('/complaints', authMiddleware, complaintController.addComplaint);
+router.get('/complaints', authMiddleware, complaintController.getComplaints);
+router.put('/complaints/:id', authMiddleware, complaintController.updateComplaintStatus);
+router.delete('/complaints/:id', authMiddleware, complaintController.deleteComplaint);
+
+// AI & Chatbot routes (Protected)
+router.post('/ai/analyze', authMiddleware, complaintController.analyzeComplaint);
+router.post('/chat', authMiddleware, complaintController.chatWithBot);
 
 module.exports = router;

@@ -36,7 +36,7 @@ const LoginPage = () => {
             Welcome Back
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
-            Sign in to access your HR analytics and chatbot.
+            Sign in to access the smart complaint management dashboard.
           </p>
         </div>
 

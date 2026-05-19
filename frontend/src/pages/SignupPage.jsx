@@ -41,7 +41,7 @@ const SignupPage = () => {
             Create Account
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
-            Join us to start managing candidates and matchings.
+            Join us to start resolving public grievances and managing complaints.
           </p>
         </div>
 
