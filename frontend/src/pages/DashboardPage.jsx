@@ -188,12 +188,6 @@ const DashboardPage = () => {
 
             </div>
           </div>
-
-          <div style={{ marginTop: '20px', padding: '15px', borderRadius: '10px', background: 'rgba(250,204,21,0.03)', border: '1px solid rgba(250,204,21,0.1)' }}>
-            <span style={{ fontSize: '0.8rem', color: '#facc15' }}>
-              📌 ESE AIML Blended Exam submission project configured successfully on MongoDB Atlas & Render.
-            </span>
-          </div>
         </div>
 
       </div>
